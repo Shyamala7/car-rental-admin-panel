@@ -1,0 +1,131 @@
+
+// Headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-top: 0;
+	color: @headings-font-color;
+	font-family: @headings-font-family;
+	font-weight: @headings-font-weight;
+	text-transform: capitalize;
+	small {
+		color: @headings-small-color;
+	}
+}
+
+// Page heading decoration
+.page-header {
+	margin-top: 0;
+	border-bottom: 1px solid lighten(@text-color, 40%);
+}
+
+.headline {
+	position: relative;
+	margin-bottom: 1em;
+	&:after {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		content: " ";
+		width: 2em;
+		height: 0.15em;
+		background: @headings-font-color;
+		margin-bottom: -0.5em;
+		// position if justified left
+		left: 0;
+	}
+	// position if justified center
+	.text-center &:after,
+	&.text-center:after {
+		left: 50%;
+		margin-left: -1em;
+	}
+	// position if justified right
+	.text-right &:after,
+	&.text-right:after {
+		left: auto;
+		right: 0;
+	}
+}
+
+// Block Quotes
+blockquote {
+	position: relative;
+	padding: 1.5em;
+	.border-radius(@base-border-radius);
+	p {
+		margin-bottom: 1em;
+	}
+	.quote-author {
+		display: block;
+		float: left;
+		margin-right: 1em;
+		max-width: 40px;
+		.border-radius(@base-border-radius);
+	}
+}
+
+.blockquote-default {
+	.blockquote-variant (#fff, darken(@base-border-color, 15%), @headings-font-color);
+}
+.blockquote-primary {
+	.blockquote-variant (@brand-primary, darken(@brand-primary, 15%), #fff);
+}
+.blockquote-secondary {
+	.blockquote-variant (@brand-secondary, darken(@brand-secondary, 15%), #fff);
+}
+
+// Contextual emphasis
+.text-muted { 
+	color: lighten(@text-color, 20%);
+	&:hover {
+		color: @text-color;
+	}
+}
+.text-primary {
+	color: @brand-primary;
+	&:hover {
+		color: darken(@brand-primary, 10%);
+	}
+}
+.text-warning {
+	color: @brand-warning;
+	&:hover {
+		color: darken(@brand-warning, 10%);
+	}
+}
+.text-danger {
+	color: @brand-danger;
+	&:hover {
+		color: darken(@brand-danger, 10%);
+	}
+}
+.text-success {
+	color: @brand-success;
+	&:hover {
+		color: darken(@brand-success, 10%);
+	}
+}
+.text-info {
+	color: @brand-info;
+	&:hover {
+		color: darken(@brand-info, 10%);
+	}
+}
+
+// Restore default heading color...
+.heading-default {
+	&,								// when heading has .heading-default class
+	[class*="bg-"] &, 				// when heading has .heading-default class, and is descendant of any .bg-* class
+	& a:not(.btn):not(:hover) { 	// when heading content is a link, but is not a button, nor is :hover
+		color: @headings-font-color;
+	}
+}
+
+// Restore default text color...
+.text-default {
+	&,								// when text has .text-default class
+	[class*="bg-"] &, 				// when text has .text-default class, and is descendant of any .bg-* class
+	& a:not(.btn):not(:hover) { 	// when text content is a link, but is not a button, nor is :hover
+		color: @headings-font-color;
+	}
+}
