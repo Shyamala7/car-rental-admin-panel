@@ -71,7 +71,6 @@ Services.service('ImageUpload', function($upload){
 // Service for calling Api
 Services.service('Researches', function (API, Auth, $location, $rootScope) {
 	this.add = function (url, parameter) {
-		console.log(parameter);
 		return API.post(url, parameter);
 	};
 	

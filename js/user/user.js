@@ -19,7 +19,7 @@ userControllers.controller('signupCtrl', ['$scope', '$location', '$http', '$comp
 		
 		$scope.newRegistration = function(){
 			$("#submit").prop('disabled', true);
-			$scope.url = '/user-verification';
+			$scope.url = 'site/10/signup';
 			
 			Researches.add($scope.url, $scope.registration).then(function (response) {
 				console.log(response);
@@ -30,7 +30,7 @@ userControllers.controller('signupCtrl', ['$scope', '$location', '$http', '$comp
 					Auth.user = response.data;
 					$cookies.AuthUser = angular.toJson(Auth);
 					$rootScope.logged_username = Auth.getUserName();
-					$location.path("/home");
+					$location.path("/createResearch");
 					
 				}else if(response.code == 404){
 					
@@ -59,7 +59,7 @@ userControllers.controller('signupCtrl', ['$scope', '$location', '$http', '$comp
 					$rootScope.logged_username = Auth.getUserName();
 					//console.log(Auth.getMailId());
 					toastr.success(Messages.Authentication.Success, '', ToastOptions);
-					$location.path('/research');
+					$location.path('/home');
 					
 				}else if(response.code == 404){
 					
@@ -100,12 +100,5 @@ userControllers.controller('logoutCtrl', ['$scope', '$location', '$http', '$comp
 userControllers.controller('homeCtrl', ['$scope', '$location', '$http', '$compile', 'Auth', 'API', '$cookies', 'Researches', '$rootScope',
 	function($scope, $location, $http, $compile, Auth, API, $cookies, Researches, $rootScope) {
 		Researches.checkLogin();
-	}
-]);
-
-
-userControllers.controller('carMstrCtrl', ['$scope', '$location', '$http', '$compile', 'Auth', 'API', '$cookies', 'Researches', '$rootScope',
-	function($scope, $location, $http, $compile, Auth, API, $cookies, Researches, $rootScope) {
-		
 	}
 ]);

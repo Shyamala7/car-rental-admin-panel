@@ -2,7 +2,7 @@
 <html lang="en" ng-app="carRentalApp">
 <head>
 	<meta charset="utf-8">
-	<title>Car rental</title>
+	<title>Car Rental App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -10,7 +10,7 @@
 	
 	<!-- <link rel="stylesheet" href="css/bootstrap.v3.3.2.min.css"> -->
 	
-	<link href="assets_new/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets_new/css/theme.css">
 	<link rel="stylesheet" href="assets_new/css/font-awesome.min.css">
 
@@ -26,10 +26,7 @@
 	<link rel="shortcut icon" href="favicon.png">
 </head>
 
-<body>
-	<!-- Main Navbar -->
-	<!-- Main Navbar -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<body><nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -38,38 +35,28 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">
-					<img src="assets_new/img/logo-light.png" alt="Website Logo">
-				</a>
+				
 			</div>
 			<!-- Navbar -->
 			<div class="collapse navbar-collapse navbar-main-collapse">
 				<ul class="nav navbar-nav">
-					<li>
-						<a href="#/" class="dropdown-toggle">Home</a>
-					</li>
-					<li><a href="#/car-master">Car Master</a></li>
-					<li><a href="#/customer-master">Customer Master</a></li>
-					<li><a href="#/rented-cars">Rented Cars</a></li>
+										<li><a href="#/car-master">Car Master</a></li>
+					<li><a href="#/customer-master">Customer Master</a></li>				
+					<li><a href="#/view-rented">View Rented Cars</a></li>
+					<li><a href="#/logout">Logout</a></li>					
 				</ul><!-- /.navbar-nav -->
-				<ul class="nav navbar-nav pull-right">
-					<li id="logged_user_name" style="display:none"><a>{{logged_username}}</a></li>
-					<li id="log_out_link" style="display:none"><a href="#/logout">Log Out</a></li>
-					<!-- <div id="sigin_link" style="display:none"> -->
-					<li id="sigin_link" style="display:none"><a href="#/template/login">Login In</a></li>
-					<li id="registration_link" style="display:none"><a href="#/template/registration">Registration</a></li>
-					<!-- </div> -->
-				</ul>
+			
 			</div><!-- /.collapse -->
+			
 		</div><!-- /.container -->
 	</nav><!-- /.navbar -->
+	<!-- Main Navbar -->
 	<div class="view-container" style="min-height:435px;">	
-		<div ng-view class="view-frame">
-		</div>
+		<div ng-view class="view-frame"></div>
 	</div>
 
 	<!-- last but not least the javascript -->
-	<script src="js/vendors/jquery-1.12.3.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="assets_new/js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script src="assets_new/js/bootstrap.min.js"></script>
 	<script src="assets_new/js/holder.js"></script>
@@ -86,18 +73,21 @@
 	<script src="js/vendors/angular-sanitize.js"></script> 
 	<script src="js/vendors/toastr.js"></script> 
 	<script src="js/vendors/smart-table/smart-table.min.js"></script> 
-	<!-- <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script> -->
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
 	
 	 
-	<script type="text/javascript" src="js/common/constants.js"></script>
-	<script src="js/common/app.js"></script>
-	<!-- <script src="js/common/services.js"></script>
+	<script type="text/javascript" src="js/common/constants.js"></script> 
+	<script src="js/common/app.js"></script> 
+	<script src="js/common/services.js"></script>
 	<script src="js/common/directives.js"></script>
-	<script src="js/common/upload.js"></script>
+	<!-- <script src="js/common/upload.js"></script>
 	
-	<script src="js/contact/contact.js"></script>
+	<script src="js/contact/contact.js"></script> -->
 	<script src="js/user/user.js"></script>
-	<script src="js/product/product.js"></script>
-	<script src="js/research/research.js"></script> -->
+	<script src="js/car/car.js"></script>
+	<script src="js/customer/customer.js"></script>
+	
+	<!-- <script src="js/product/product.js"></script>
+	<script src="js/research/research.js"></script>  -->
 </body>
 </html>
