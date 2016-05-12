@@ -1,4 +1,4 @@
-angular.module('carRentalApp.directives', [])
+angular.module('iResearchApp.directives', [])
     .directive('pwCheck', [function () {
 		return {
 			require: 'ngModel',
